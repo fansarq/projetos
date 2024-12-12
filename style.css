@@ -1,0 +1,157 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+:root{
+    --co-texto:white;
+    --cor-destaque:orange;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    height:100vh;
+    background-color: black;
+    background-image: url(assets/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+li{
+    list-style: none;
+    color:var(--co-texto);
+}
+a{
+    text-decoration: none;
+    color: var(--co-texto);
+    font-size: 1rem;
+}
+a:hover{
+    color: var(--cor-destaque);
+}
+
+/*header*/
+
+header{
+    position: relative;
+    padding: 0 2 rem;
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+.navbar .toggle-btn{
+    color: var(--co-texto);
+    
+    cursor: pointer;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+.btn-contrate{
+    background-color: var(--cor-destaque);
+    color: var(--co-texto);
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+.btn-contrate:hover{
+    color: var(--co-texto);
+    scale: 1.05;
+}
+.btn-contrate:active{
+    scale: 0.95;
+}
+
+.btn-contrate2{
+    background-color: var(--cor-destaque);
+    color: var(--co-texto);
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+.btn-contrate2:hover{
+    color: var(--co-texto);
+    scale: 1.05;
+}
+.btn-contrate2:active{
+    scale: 0.95;
+}
+
+
+/*drop menu*/
+.drop-menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    backdrop-filter: blur(35px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.drop-menu.open{
+    height: 240px;
+}
+
+.drop-menu li{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.drop-menu .btn-contrate2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: large;
+}
+
+/*resposividade*/
+
+@media(max-width:992px){
+    .navbar .links,
+    .navbar .btn-contrate{
+        display: none;
+    }
+    .navbar .toggle-btn{
+        display:block;
+    }
+    .drop-menu{
+        display: block;
+    }
+    .navbar{
+        padding: 25px;
+    }
+    body{
+        background-size: cover;
+    }
+}
